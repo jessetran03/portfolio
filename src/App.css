@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+section {
+  margin: 0 auto 8em;
+  width: 80vw;
+  max-width: 1200px;
+  padding-top: 70px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section > h2:hover::after {
+  content: " #";
+  color: gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input, textarea, button {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+}
+input:nth-child(1) {
+  width: 25%;
+}
+input:nth-child(2) {
+  width: 50%;
+}
+textarea {
+  height: 1.3em;
+  width: 75%;
+  max-width: 80vw;
+  min-height: 1.3em;
+  max-height: 5em;
+}
+button {
+  background-color: gray;
+  font-weight: 700;
+  color: white;
+}
+button:hover {
+  color: rgb(80, 230, 240);
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: rgb(80, 80, 80, 0.95);
+  padding: 15px;
+  height: 30px;
+}
+nav a {
+  margin-right: 30px;
+}
+
+.header {
+  min-height: calc(100vh - 30px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.about .skills {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.about .skills > li {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact form {
+  display: grid;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+}
+.projects h3 {
+  margin: 0 0 15px 0;
+}
+.projects img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 5px 5px #bbb;
+}
+.projects .project {
+  background-color: rgb(231, 235, 238, 0.9);
+  border-radius: 10px;
+  padding: 20px 25px;
+  color: black;
+  box-shadow: 3px 3px 8px 8px #111;
+}
+.projects .project .icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth;
   }
 }
