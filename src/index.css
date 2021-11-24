@@ -9,11 +9,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 body {
   margin: 0;
-  background-color: #272b36;
+  background-color: #252934;
   font-size: 20px;
   color: white;
   font-family: "Quicksand", sans-serif;
@@ -30,6 +28,10 @@ a {
   color: white;
   text-decoration: none;
   font-weight: 700;
+}
+
+a:link, button, .bars {
+  transition: color 0.2s ease-in-out;
 }
 
 a:hover {
@@ -54,11 +56,6 @@ h3 {
   font-size: calc(10px + 2vmin);
   font-weight: 700;
   margin: 0 0 20px 0;
-}
-
-svg {
-  width: 3em;
-  height: 3em;
 }
 
 hr {

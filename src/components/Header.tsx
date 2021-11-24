@@ -2,10 +2,10 @@ import { FC } from "react";
 
 const About: FC = () => {
   return (
-    <header className="header">
-        <h1>Jesse Tran</h1>
-        <h3>Software Developer</h3>
-      </header>
+    <header id="main" className="header stars">
+      <h1>Jesse Tran</h1>
+      <h3>Software Developer</h3>
+    </header>
   );
 };
 

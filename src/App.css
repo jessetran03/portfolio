@@ -1,6 +1,6 @@
 section {
   margin: 0 auto 8em;
-  width: 80vw;
+  width: 90vw;
   max-width: 1200px;
   padding-top: 70px;
 }
@@ -8,6 +8,11 @@ section {
 section > h2:hover::after {
   content: " #";
   color: gray;
+}
+
+svg {
+  width: calc(10px + 8vw);
+  height: calc(10px + 8vw)
 }
 
 input, textarea, button {
@@ -43,17 +48,66 @@ button:hover {
 
 nav {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: center;
   align-items: center;
   background-color: rgb(80, 80, 80, 0.95);
   padding: 15px;
   height: 30px;
 }
-nav a {
-  margin-right: 30px;
+nav .logo {
+  font-size: 36px;
+  font-weight: 600;
+}
+nav .links a {
+  margin-left: 30px;
+}
+nav .bars {
+  font-size: 36px;
+}
+nav .bars:hover {
+  color: rgb(80, 230, 240);
+  cursor: pointer;
+}
+.mobile-nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+.mobile-nav a {
+  padding: 10px;
+  border-bottom: 1px solid white;
+  background-color: rgb(50, 50, 50, 0.95);
+  animation: slide-down 0.4s ease;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  height: 36px;
+  border-top: 1px solid white;
+  font-size: 22px;
+}
+
+footer a {
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  max-width: 1200px;
 }
 
 .header {
+  background: url("stars.png") repeat top center;
   min-height: calc(100vh - 30px);
   display: flex;
   flex-direction: column;
@@ -65,6 +119,7 @@ nav a {
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
+  z-index: 1;
 }
 
 .about .skills {
@@ -73,7 +128,7 @@ nav a {
   list-style: none;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
 }
 .about .skills > li {
   border: 1px solid white;
@@ -102,7 +157,12 @@ nav a {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
-  box-shadow: 3px 3px 5px 5px #bbb;
+  box-shadow: 3px 3px 5px 5px #c7c7c7;
+  transition: box-shadow 200ms;
+}
+
+.projects img:hover {
+  box-shadow: 3px 3px 20px 5px #aaa;
 }
 .projects .project {
   background-color: rgb(231, 235, 238, 0.9);
@@ -110,20 +170,79 @@ nav a {
   padding: 20px 25px;
   color: black;
   box-shadow: 3px 3px 8px 8px #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .projects .project .icons {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+.projects .project-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.projects .project-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 32px;
+}
+.projects .project-links a {
+  color: black;
+  margin-left: 20px;
+}
+.projects .project-links a:hover {
+  color: white;
+}
+.more-projects {
+  margin-top: 50px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.desktop {
+  display: none;
+}
 
 @media (min-width: 768px) {
+  svg {
+    width: calc(25px + 2vw);
+    height: calc(25px + 2vw)
+  }
+  .inner, section {
+    width: 80vw;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
   .projects {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .about .skills {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
   }
 }
