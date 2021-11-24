@@ -107,7 +107,7 @@ footer a {
 }
 
 .header {
-  background: url("stars.png") repeat top center;
+  background: url("images/stars.png") repeat top center;
   min-height: calc(100vh - 30px);
   display: flex;
   flex-direction: column;

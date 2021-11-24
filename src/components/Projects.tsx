@@ -3,6 +3,11 @@ import { Icon } from "@iconify/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import screenshot1 from "../images/aimfit-react-screenshot.png";
+import screenshot2 from "../images/aimfit-mobile-screenshot.png";
+import screenshot3 from "../images/boba-tier-screenshot.png";
+import screenshot4 from "../images/date-night-screenshot.png";
+
 
 const Projects: FC = () => {
   return (
@@ -37,7 +42,7 @@ const Projects: FC = () => {
             rel="noreferrer"
           >
             <img
-              src="/images/aimfit-react-screenshot.png"
+              src={screenshot1}
               alt="AimFit Screenshot"
             />
           </a>
@@ -78,7 +83,7 @@ const Projects: FC = () => {
             rel="noreferrer"
           >
             <img
-              src="/images/aimfit-mobile-screenshot.png"
+              src={screenshot2}
               alt="AimFit Mobile Screenshot"
             />
           </a>
@@ -118,7 +123,7 @@ const Projects: FC = () => {
             rel="noreferrer"
           >
             <img
-              src="/images/boba-tier-screenshot.png"
+              src={screenshot3}
               alt="Boba Tier Screenshot"
             />
           </a>
@@ -158,7 +163,7 @@ const Projects: FC = () => {
             rel="noreferrer"
           >
             <img
-              src="/images/date-night-screenshot.png"
+              src={screenshot4}
               alt="Date Night Screenshot"
             />
           </a>
