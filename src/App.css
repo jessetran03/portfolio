@@ -12,10 +12,12 @@ section > h2:hover::after {
 
 svg {
   width: calc(10px + 8vw);
-  height: calc(10px + 8vw)
+  height: calc(10px + 8vw);
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   padding: 10px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -23,26 +25,19 @@ input, textarea, button {
   border: none;
   border-radius: 10px;
 }
-input:nth-child(1) {
-  width: 25%;
-}
-input:nth-child(2) {
-  width: 50%;
-}
 textarea {
   height: 1.3em;
-  width: 75%;
-  max-width: 80vw;
-  min-height: 1.3em;
+  min-height: 5em;
   max-height: 5em;
 }
 button {
-  background-color: gray;
+  background-color: rgb(69, 70, 75, 0.95);
   font-weight: 700;
   color: white;
 }
-button:hover {
-  color: rgb(80, 230, 240);
+button:hover,
+nav .bars:hover {
+  color: rgb(244, 244, 100);
   cursor: pointer;
 }
 
@@ -50,7 +45,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(80, 80, 80, 0.95);
+  background-color: rgb(59, 60, 65, 0.95);
   padding: 15px;
   height: 30px;
 }
@@ -63,10 +58,6 @@ nav .links a {
 }
 nav .bars {
   font-size: 36px;
-}
-nav .bars:hover {
-  color: rgb(80, 230, 240);
-  cursor: pointer;
 }
 .mobile-nav {
   position: fixed;
@@ -116,9 +107,9 @@ footer a {
   font-size: calc(10px + 2vmin);
 }
 .sticky {
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 1;
 }
 
@@ -143,6 +134,11 @@ footer a {
 }
 .contact form {
   display: grid;
+  grid-template-columns: 1fr;
+}
+.contact .name-email {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .projects {
@@ -211,9 +207,10 @@ footer a {
 @media (min-width: 768px) {
   svg {
     width: calc(25px + 2vw);
-    height: calc(25px + 2vw)
+    height: calc(25px + 2vw);
   }
-  .inner, section {
+  .inner,
+  section {
     width: 80vw;
   }
   .mobile {
@@ -224,6 +221,12 @@ footer a {
   }
   .projects {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .contact .name-email {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact .name-email input:nth-child(1) {
+    margin-right: 10px;
   }
   .about .skills {
     grid-template-columns: repeat(4, 1fr);
@@ -238,11 +241,11 @@ footer a {
 
 @keyframes slide-down {
   0% {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
